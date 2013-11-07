@@ -1,0 +1,48 @@
+body{
+	background-color: #ecf0f1;
+}
+
+.content{
+	margin-top: 20px;
+}
+
+#login {
+		margin: 15px 0px;
+		padding: 0px;
+		text-align: center;
+		background-color: #ecf0f1;
+	}
+#login input[type="text"],#login input[type="password"]{
+		width: 95%;
+}
+
+#login .inner {
+	width: 300px;
+	padding: 6px;
+	padding: 20px;
+	margin: 60px auto;
+	text-align: left;
+	border: 1px solid #aab;
+	background-color: #FFF;
+	-moz-box-shadow: 2px 2px 2px #eee;
+	-webkit-box-shadow: 2px 2px 2px #eee;
+	-khtml-box-shadow: 2px 2px 2px #eee;
+	box-shadow: 2px 2px 2px #eee;
+}
+
+#login .inner .fheader {
+	padding: 18px 26px 14px 26px;
+	background-color: #FFF;
+	margin: 0px 0 14px 0;
+	color: #2e3741;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.special-thanks{
+	font-size: 12px; 
+	font-style: italic;
+	text-align: right;
+	color: #95a5a6;
+}
