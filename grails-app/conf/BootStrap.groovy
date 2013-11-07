@@ -58,7 +58,7 @@ class BootStrap {
             user.save(flush:true)
             UserRole.create user,role,true
         }
-        user = User.findByUsername("aaa")
+        /*user = User.findByUsername("aaa")
         if(!user){
             def role = Role.findByAuthority("ROLE_USER")
             if(!role){
@@ -88,6 +88,7 @@ class BootStrap {
             UserRole.create user,role,true
             println "ok2"
         }
+        */
 
     }
     def destroy = {
