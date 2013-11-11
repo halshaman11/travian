@@ -38,28 +38,28 @@
 		<g:each var="user" in="${_users}">
 			<tr>
 			<td><g:link action="user" id="${user.id}">${user.username}</g:link></td>
-			<td class="right">${user.info.armySummary.u1}</td>
-			<td class="right">${user.info.armySummary.u2}</td>
-			<td class="right">${user.info.armySummary.u3}</td>
-			<td class="right">${user.info.armySummary.u4}</td>
-			<td class="right">${user.info.armySummary.u5}</td>
-			<td class="right">${user.info.armySummary.u6}</td>
-			<td class="right">${user.info.armySummary.u7}</td>
-			<td class="right">${user.info.armySummary.u8}</td>
-			<td class="right">${user.info.armySummary.u9}</td>
+			<td class="right">${user.info.army?.slot1 ?:0}</td>
+			<td class="right">${user.info.army?.slot2 ?:0}</td>
+			<td class="right">${user.info.army?.slot3 ?:0}</td>
+			<td class="right">${user.info.army?.slot4 ?:0}</td>
+			<td class="right">${user.info.army?.slot5 ?:0}</td>
+			<td class="right">${user.info.army?.slot6 ?:0}</td>
+			<td class="right">${user.info.army?.slot7 ?:0}</td>
+			<td class="right">${user.info.army?.slot8 ?:0}</td>
+			<td class="right">${user.info.army?.slot9 ?:0}</td>
 			
 			<td  class="center"><g:formatDate date="${user.info.lastUpdated}" format="dd/MM/yyyy HH:mm"/></td>
 			</tr>
 			<%
-				u1+=user.info.armySummary.u1
-				u2+=user.info.armySummary.u2
-				u3+=user.info.armySummary.u3
-				u4+=user.info.armySummary.u4
-				u5+=user.info.armySummary.u5
-				u6+=user.info.armySummary.u6
-				u7+=user.info.armySummary.u7
-				u8+=user.info.armySummary.u8
-				u9+=user.info.armySummary.u9
+				u1+=user.info.army?.slot1 ?:0
+				u2+=user.info.army?.slot2 ?:0
+				u3+=user.info.army?.slot3 ?:0
+				u4+=user.info.army?.slot4 ?:0
+				u5+=user.info.army?.slot5 ?:0
+				u6+=user.info.army?.slot6 ?:0
+				u7+=user.info.army?.slot7 ?:0
+				u8+=user.info.army?.slot8 ?:0
+				u9+=user.info.army?.slot9 ?:0
 			%>
 		</g:each>
 		<tr>

@@ -38,7 +38,9 @@ class AdminHomeController {
 
 	def user = {
 		def user = User.get(params.id)
-		[user:user,info:user.info,towns:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
+
+		[user:user,armySummarys:user.info.armySummarys.sort{ it.id }.reverse(),race:user.info.race.name[0].toLowerCase()]
+		//[user:user,info:user.info,towns:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
 	}
 	
 

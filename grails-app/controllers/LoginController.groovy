@@ -38,15 +38,16 @@ class LoginController {
 
 	 def doRegister = {
 	 	
-	 	if(!params.travianID || !params.heroLevel || !params.password){
+	 	if(!params.travianID || !params.password){
 	 		redirect(action:"failure")
 	 	}else{
+	 		def userRole = Role.findByAuthority("ROLE_USER")
 	 		def user = new User()
 	 		user.username = params.travianID
 	 		user.password = params.password
 	 		user.info = new UserInfo()
 	 		user.info.username = params.travianID
-	 		user.info.heroLevel = params.heroLevel as Integer
+	 		user.info.heroLevel = 0
 	 		user.info.isUseGold = params.isUseGold ?:false
 	 		user.info.playType = params.playType ?:""
 	 		user.info.playTime = params.playTime ?:""
@@ -54,11 +55,12 @@ class LoginController {
 	 		user.info.guild = Guild.get(params.guild as Long)
 	 		user.enabled = true
 	 		user.accountExpired = false
-			user.accountLocked = true
+			user.accountLocked = false
 			user.passwordExpired = false
 			user.validate()
 			println user.errors
 	 		if(user.save(flush:true)){
+	 			UserRole.create user,userRole
 	 			redirect(action:"success")
 	 		}else{
 	 			redirect(action:"failure")
@@ -95,12 +97,13 @@ class LoginController {
 	}
 
 	def loginSuccess = {
-		println SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')
+		println "is admin =>"+SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')
+		println "is user =>"+SpringSecurityUtils.ifAllGranted('ROLE_USER')
 		if (SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')) {
          	redirect controller: 'adminHome'
          	return
       	}
-      	if (SpringSecurityUtils.ifAllGranted('ROLE_USER')) {
+      	else {//(SpringSecurityUtils.ifAllGranted('ROLE_USER')) {
          	redirect controller: 'userHome'
          	return
       	}

@@ -8,7 +8,7 @@
 <body >
 	<div class="container">
 		<h3>Register - Fill your information</h3>
-		<p>หลังจากสมัครแล้ว ท่านจะเข้าสู่ระบบได้ก็ต่อเมื่อ Admin ทำการอนุมัติก่อน เพื่อป้องกันการกรอกมั่ว (หลังจากอนุมัติแล้วจะ igm ไปแจ้งครับ)</p>
+		<p>หลังจากสมัครแล้ว ท่านสามารถเข้าสู่ระบบได้โดยใช้ข้อมูลดังต่อไปนี้</p>
 	</div>
 
 	<div class="container content">
@@ -39,12 +39,7 @@
 		      <g:select from="${tm.game.Guild.list()}" optionValue="name" optionKey="id" name="guild" />
 		    </div>
 		  </div>
-		  <div class="control-group">
-		    <label class="control-label" for="heroLevel">ฮีโร่เลเวล</label>
-		    <div class="controls">
-		      <input type="number" name="heroLevel" min="0" max="100" />
-		    </div>
-		  </div>
+		  
 		  <div class="control-group">
 		    <label class="control-label" for="isUseGold">เติมทอง ?</label>
 		    <div class="controls">

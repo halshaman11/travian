@@ -9,7 +9,7 @@ class UserHomeController {
 
 	def index = {
 		def user = springSecurityService.getCurrentUser()
-		[user:user,race:user.info.race.name[0].toLowerCase(),armySummary:user.info.armySummary]		
+		[user:user,race:user.info.race.name[0].toLowerCase(),armySummary:user.info.army]		
 	}
 
 
@@ -33,9 +33,32 @@ class UserHomeController {
 
 	}
 
+	def doUpdateSummary = {
+		try{
+			def user = springSecurityService.getCurrentUser()
+			def set = user.info?.army
+			if(set){
+				set.isActive = false
+				set.save()	
+			}
+		
+			def newSet = new ArmySummary(params)
+			user.info.addToArmySummarys(newSet)	
+			user.save(flush:true)
+			redirect(action:"index")
+		}catch(Exception e){
+			redirect(action:"index")
+		}
+	}
+
+	def history = {
+		def user = springSecurityService.getCurrentUser()
+		[armySummarys:user.info.armySummarys.sort{ it.id }.reverse(),race:user.info.race.name[0].toLowerCase()]
+
+	}
+
 	def addTown = {
 		def user = springSecurityService.getCurrentUser()
-
 		[user:user,race:user.info.race.name[0].toLowerCase()]
 	}
 

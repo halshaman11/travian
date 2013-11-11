@@ -24,7 +24,7 @@
     				<a class="brand" href="#">TVM</a>
     				<ul class="nav">
       					<li class="${actionName=="index" ? 'active':''}"><g:link action="index">Home</g:link></li>
-      					<li class="${actionName=="updateArmy" ? 'active':''}"><g:link action="updateArmy">Update Town & Army</g:link></li>
+      					<li class="${actionName=="history" ? 'active':''}"><g:link action="history">History</g:link></li>
 
     				</ul>
     				<ul class="nav pull-right">

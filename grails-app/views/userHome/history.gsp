@@ -1,19 +1,13 @@
 <html>
 <head>
-	<meta name='layout' content='admin'/>
+	<meta name='layout' content='user'/>
 	<title>Travian Guild Manager - History</title>
 
 	
 </head>
 
 <body>
-
-
-
-	<h4>ประวัติการอัพข้อมูล ${user.username}</h4>
-	<div style="padding:15px;float:right;"> 
-		<g:link action="users" class="btn"> ย้อนกลับ</g:link>
-	</div>
+	<h4>ประวัติการอัพข้อมูล</h4>
 	<br/>
 	<table class="table table-bordered table-army">
 			  	<tr>
