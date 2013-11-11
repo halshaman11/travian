@@ -15,7 +15,7 @@ environments {
        dataSource {
             driverClassName = "com.mysql.jdbc.Driver"
             username = "root"
-            password =  "123456"
+            password =  ""
             dbCreate = "update"
             url = "jdbc:mysql://localhost:3306/travian?useUnicode=true&characterEncoding=utf8"
         }
