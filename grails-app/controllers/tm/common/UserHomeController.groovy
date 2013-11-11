@@ -45,7 +45,7 @@ class UserHomeController {
 			def newSet = new ArmySummary(params)
 			user.info.addToArmySummarys(newSet)	
 			user.save(flush:true)
-			redirect(action:"index")
+			redirect(action:"index",params:[success:true])
 		}catch(Exception e){
 			redirect(action:"index")
 		}
