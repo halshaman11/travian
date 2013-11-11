@@ -15,47 +15,42 @@
 		<g:link action="users" class="btn"> ย้อนกลับ</g:link>
 	</div>
 	<br/>
-	<table class="table table-bordered table-army">
-			  	<tr>
-			  		<th width="150px;">Last Updated</th>
-			  		<th width="80px;"><img class="unit-${race} u1" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u2" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u3" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u4" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u5" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u6" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u7" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u8" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th width="80px;"><img class="unit-${race} u9" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
-			  		<th>รวม</th>
-			  	</tr>
-			  	<g:each var="armySummary" in="${armySummarys}">
-			  	<% def sum = 0 
-			  		sum += armySummary?.u1 ?:0
-			  		sum += armySummary?.u2 ?:0
-			  		sum += armySummary?.u3 ?:0
-			  		sum += armySummary?.u4 ?:0
-			  		sum += armySummary?.u5 ?:0
-			  		sum += armySummary?.u6 ?:0
-			  		sum += armySummary?.u7 ?:0
-			  		sum += armySummary?.u8 ?:0
-			  		sum += armySummary?.u9 ?:0
-			  	%>
-			  	<tr>
-			  		<td><g:formatDate date="${armySummary.lastUpdated}" format="dd/MM/yyyy HH:mm:ss" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u1 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u2 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u3 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u4 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u5 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u6 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u7 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u8 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.u9 ?:0}" format="##,###" /></td>
-			  		<td class="right"><g:formatNumber number="${sum}" format="##,###" /></td>
-			  	</tr>
-			  </g:each>
-			  </table>
+	
+                 
+                 
+                 <table class="table table-bordered table-army">
+                                  <tr>
+                                  	<th><i class="icon-home"></i></th>
+                                          <th width="80px"><img class="unit-${race} u1" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u2" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u3" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u4" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u5" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u6" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u7" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u8" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          <th width="80px"><img class="unit-${race} u9" src="${resource(dir: 'images/icon', file: 'x.gif')}" /></th>
+                                          
+                                  </tr>
+                                  <g:each var="town" in="${towns}">
+                                  <tr>
+                                  	<td>${town.name} (${town.x}|${town.y})
+<br/>
+                                  		<em style="font-size:10px;color:#ccc;">Updated: <g:formatDate date="${town?.activeSet?.lastUpdated}" format="dd/MM/yyyy HH:mm" /></em></td>
+                                          <td>${town.activeSet.slot1}</td>
+                                          <td>${town.activeSet.slot2}</td>
+                                          <td>${town.activeSet.slot3}</td>
+                                          <td>${town.activeSet.slot4}</td>
+                                          <td>${town.activeSet.slot5}</td>
+                                          <td>${town.activeSet.slot6}</td>
+                                          <td>${town.activeSet.slot7}</td>
+                                          <td>${town.activeSet.slot8}</td>
+                                          <td>${town.activeSet.slot9}</td>
+                                  </tr>
+                              		</g:each>
+                          </table>
+                         
+         
 	
 </body>
 </html>
