@@ -21,11 +21,11 @@
 
 
 	<h5>ภาพรวม</h5>
-
+	<g:if test="${flash.success}">
 	<div class="alert alert-success">
   			บันทึกข้อมูลเรียบร้อยแล้ว สามารถดูข้อมูลการกรอกย้อนหลังได้ <g:link action="history" >ที่นี่</g:link>
 		</div>
-
+	</g:if>
 	<g:form action="doUpdateSummary">
 	<em style="text-align:right;font-size:11px;color:#AAA;">Last Updated: ${armySummary?.lastUpdated ?:"-"}</em>
 	<table class="table table-bordered table-army">
