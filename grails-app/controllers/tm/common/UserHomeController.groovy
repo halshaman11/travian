@@ -9,13 +9,14 @@ class UserHomeController {
 
 	def index = {
 		def user = springSecurityService.getCurrentUser()
-		[user:user,race:user.info.race.name[0].toLowerCase(),armySummary:user.info.army]		
+		[user:user,race:user.info.race.name[0].toLowerCase(),armySummary:user.info.armySummary]      		
 	}
 
 
 	def updateArmy = {
 		def user = springSecurityService.getCurrentUser()
-		[user:user,info:user.info,towns:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
+		 [user:user,info:user.info,towns:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
+		//[user:user,info:user.info,towns:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
 	}
 
 	def doUpdateTown = {
@@ -29,6 +30,7 @@ class UserHomeController {
 			set.isActive = false
 			set.save()
 		}
+		flash.success = true
 		redirect(action:"updateArmy")
 
 	}

@@ -4,7 +4,7 @@ import tm.game.*
 class BootStrap {
 
     def init = { servletContext ->
-    	def gaul = Race.findByName("Gaul")
+    	def gaul = Race.findByName("Gauls")
     	if(!gaul){
     		gaul = new Race()
     		gaul.name = "Gauls"

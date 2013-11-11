@@ -31,27 +31,27 @@
 			  	</tr>
 			  	<g:each var="armySummary" in="${armySummarys}">
 			  	<% def sum = 0 
-			  		sum += armySummary?.slot1 ?:0
-			  		sum += armySummary?.slot2 ?:0
-			  		sum += armySummary?.slot3 ?:0
-			  		sum += armySummary?.slot4 ?:0
-			  		sum += armySummary?.slot5 ?:0
-			  		sum += armySummary?.slot6 ?:0
-			  		sum += armySummary?.slot7 ?:0
-			  		sum += armySummary?.slot8 ?:0
-			  		sum += armySummary?.slot9 ?:0
+			  		sum += armySummary?.u1 ?:0
+			  		sum += armySummary?.u2 ?:0
+			  		sum += armySummary?.u3 ?:0
+			  		sum += armySummary?.u4 ?:0
+			  		sum += armySummary?.u5 ?:0
+			  		sum += armySummary?.u6 ?:0
+			  		sum += armySummary?.u7 ?:0
+			  		sum += armySummary?.u8 ?:0
+			  		sum += armySummary?.u9 ?:0
 			  	%>
 			  	<tr>
 			  		<td><g:formatDate date="${armySummary.lastUpdated}" format="dd/MM/yyyy HH:mm:ss" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot1 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot2 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot3 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot4 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot5 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot6 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot7 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot8 ?:0}" format="##,###" /></td>
-			  		<td><g:formatNumber number="${armySummary?.slot9 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u1 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u2 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u3 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u4 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u5 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u6 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u7 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u8 ?:0}" format="##,###" /></td>
+			  		<td><g:formatNumber number="${armySummary?.u9 ?:0}" format="##,###" /></td>
 			  		<td class="right"><g:formatNumber number="${sum}" format="##,###" /></td>
 			  	</tr>
 			  </g:each>
