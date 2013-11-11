@@ -5,9 +5,10 @@ import grails.plugins.springsecurity.Secured
 @Secured(['ROLE_ADMIN'])
 class AdminHomeController {
 
+	def statisticService
+
 	def index = {
-		def users = User.findAllByAccountLocked(true)
-		[users:users]
+		
 	}
 
 	def unlock = {
