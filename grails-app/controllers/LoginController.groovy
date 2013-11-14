@@ -102,6 +102,9 @@ class LoginController {
 		if (SpringSecurityUtils.ifAllGranted('ROLE_ADMIN')) {
          	redirect controller: 'adminHome'
          	return
+      	}else if (SpringSecurityUtils.ifAllGranted('ROLE_MANAGER')) {
+         	redirect controller: 'managerHome'
+         	return
       	}
       	else {//(SpringSecurityUtils.ifAllGranted('ROLE_USER')) {
          	redirect controller: 'userHome'

@@ -25,6 +25,7 @@
     				<ul class="nav">
       					<li class="${actionName=="index" ? 'active':''}"><g:link action="index">Home</g:link></li>
       					<li class="${actionName=="users" ? 'active':''}"><g:link action="users">User</g:link></li>
+
       					<!--<li class="${actionName=="summary" ? 'active':''}"><g:link action="summary">Summary</g:link></li>-->
     				</ul>
     				<ul class="nav pull-right">

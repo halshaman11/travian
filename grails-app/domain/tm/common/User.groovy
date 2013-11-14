@@ -1,4 +1,5 @@
 package tm.common
+import tm.game.*
 
 class User {
 
@@ -12,10 +13,13 @@ class User {
 	boolean passwordExpired
 	UserInfo info 
 
+	Guild guild
+
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
 		info nullable:true
+		guild nullable:true
 	}
 
 	static mapping = {

@@ -33,7 +33,7 @@ class AdminHomeController {
 
 	def users = {
 		def admin = User.findByUsername("admin")
-		def users = (User.list() - admin)
+		def users = UserRole.findAllByRole(Role.findByAuthority("ROLE_USER")).collect{ it.user }
 		[users:users]
 	}
 

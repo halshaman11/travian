@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 	<g:each var="_race" in="${tm.common.Race.list()}">
 	<h4>${_race.name}</h4>
 	<% def _users = users.findAll{ it.info.race == _race} 
