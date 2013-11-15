@@ -35,7 +35,7 @@
 		
 		
 
-	<div class="special-thanks">Powered by aeronz	</div>
+	<div class="special-thanks">Powered by aeronz Version 1.2.1	</div>
 	</div>
 </div>
 <script type='text/javascript'>
