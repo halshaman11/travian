@@ -14,7 +14,7 @@ class StatisticService{
 			def calendar = Calendar.getInstance()
 			calendar.setTime(_date)
 			dates << sdf.format(_date)
-			println ""+_date
+			
 			_date++
 
 		}
@@ -25,7 +25,7 @@ class StatisticService{
 	}
 
 	def generateSummary(guild){
-		println guild
+		
 		def userSums = []
 		def users  = User.withCriteria {
 			info{

@@ -20,7 +20,7 @@ class ManagerHomeController {
 			}
 		}
 
-		[all:users.size(),guild:adminGuild,guildSum:guildSum]
+		[all:users.size(),guild:adminGuild,guildSum:guildSum.reverse()]
 	}
 
 	def delete = {
@@ -31,13 +31,13 @@ class ManagerHomeController {
 
 	def users = {
 		def adminGuild = springSecurityService.getCurrentUser()?.guild
-		println adminGuild
+		
 		def users = User.withCriteria {
 			info{
 				eq("guild",adminGuild)
 			}
 		}
-		println users
+		
 		[users:users]
 	}
 
@@ -53,7 +53,7 @@ class ManagerHomeController {
 		def guildSum = Summary.findAllByUserInfo(user.info,[max: 10, sort: "date", order: "desc"])
 		
 		//[user:user,armySummarys:user.info.armySummarys.sort{ it.id }.reverse(),race:user.info.race.name[0].toLowerCase()]
-		[guildSum:guildSum,user:user,info:user.info,towns:user.info.towns,armySummarys:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
+		[guildSum:guildSum.reverse(),user:user,info:user.info,towns:user.info.towns,armySummarys:user.info.towns.sort{ it.id },race:user.info.race.name[0].toLowerCase()]
 	}
 
 	def doSummary = {
